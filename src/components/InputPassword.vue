@@ -1,5 +1,20 @@
 <script setup>
-import { ref } from 'vue';
+
+
+export default {
+    data() {
+        return {
+            password: "",
+            passwordFieldType: "password"
+        };
+    },
+    methods: {
+        switchVisibility() {
+            this.passwordFieldType = this.passwordFieldType === "password" ? "text" : "password";
+        }
+    } 
+};
+
 
 </script>
 
@@ -8,14 +23,14 @@ import { ref } from 'vue';
         <h1 class="my-3">Exercise Input Password</h1>
         <input type="password" name="" id="password" class="form-control">
         <div class="d-block">
-            <span id="show-password" class="mt-2 btn btn-primary">Show Password</span>
+            <span @click="swtichVisibility" id="show - password" class="mt-2 btn btn-primary">Show Password</span>
         </div>
     </div>
 </template>
 
 <style lang="css" scoped>
-    #show-password:hover {
-        cursor: pointer;
-        user-select: none;
-    }
+#show-password:hover {
+    cursor: pointer;
+    user-select: none;
+}
 </style>
